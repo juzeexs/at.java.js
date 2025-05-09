@@ -1,0 +1,11 @@
+const prompt = require('prompt-sync')();
+const peso = parseFloat(prompt("Peso (kg): "));
+const altura = parseFloat(prompt("Altura (m): "));
+const imc = peso / (altura ** 2);
+let status = "";
+if (imc < 18.5) status = "Abaixo do peso";
+else if (imc < 25) status = "Peso normal";
+else if (imc < 30) status = "Sobrepeso";
+else if (imc < 40) status = "Obesidade";
+else status = "Obesidade grave";
+console.log(`IMC: ${imc.toFixed(2)} - ${status}`);
